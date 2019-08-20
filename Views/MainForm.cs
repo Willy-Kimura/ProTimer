@@ -105,16 +105,7 @@ namespace ProTimer.Views
             _alignedText = false;
         }
 
-        #endregion
-
-        #region Events
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            PrepareTimer();
-        }
-
-        private void btnPlayPause_Click(object sender, EventArgs e)
+        private void PlayPause()
         {
             if (!IsPlaying)
                 PlayTimer();
@@ -122,7 +113,41 @@ namespace ProTimer.Views
                 PauseTimer();
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Events
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            PrepareTimer();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter ||
+                e.KeyCode == Keys.Space)
+            {
+                PlayPause();
+            }
+
+            if ((e.Modifiers == Keys.Alt && e.KeyCode == Keys.Space) ||
+                e.KeyCode == Keys.C)
+            {
+                StopTimer();
+            }
+
+            if (e.KeyCode == Keys.V)
+            {
+                
+            }
+        }
+
+        private void btnPlayPause_Click(object sender, EventArgs e)
+        {
+            PlayPause();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
