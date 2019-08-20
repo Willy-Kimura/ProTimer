@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProTimer", "ProTimer.csproj", "{1762B5D7-8F10-4CDB-8C65-69FF566B8594}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1762B5D7-8F10-4CDB-8C65-69FF566B8594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1762B5D7-8F10-4CDB-8C65-69FF566B8594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1762B5D7-8F10-4CDB-8C65-69FF566B8594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1762B5D7-8F10-4CDB-8C65-69FF566B8594}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CBCBAB9-A7F4-4EE7-969D-7B8E2A68B3ED}
+	EndGlobalSection
+EndGlobal
