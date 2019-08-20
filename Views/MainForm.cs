@@ -43,7 +43,7 @@ namespace ProTimer.Views
         private void PrepareTimer()
         {
             // Set to 30 mins.
-            timer.SetTime(30, 10);
+            SetTime(30, 0);
 
             // Update label text.
             timer.TimeChanged += delegate
@@ -67,6 +67,19 @@ namespace ProTimer.Views
             timer.StepMs = 100; // 33;
 
             InitializeTimerButtons();
+        }
+
+        private void SetTime(int min = 30, int sec = 00)
+        {
+            timer.SetTime(min, sec);
+
+            Countdown = $"{min}:{sec}";
+
+            lblCountdownSet.Text = 
+                $"{(min.ToString().Length == 1 ? "0" : "")}{min}<span style=\"color: silver;\">:" +
+                $"{(sec.ToString().Length == 1 ? "0" : "")}{sec}</span><span style=\"color: darkgray;\">:00</span>";
+
+            lblCountdownSet.Left = (Width - lblCountdownSet.Width) / 2;
         }
 
         public void PlayTimer()
@@ -113,6 +126,11 @@ namespace ProTimer.Views
                 PauseTimer();
         }
 
+        private void EditCountdown()
+        {
+
+        }
+
         #endregion
 
         #region Events
@@ -130,36 +148,40 @@ namespace ProTimer.Views
                 PlayPause();
             }
 
-            if ((e.Modifiers == Keys.Alt && e.KeyCode == Keys.Space) ||
-                e.KeyCode == Keys.C)
+            if (e.KeyCode == Keys.X)
             {
                 StopTimer();
             }
 
-            if (e.KeyCode == Keys.V)
+            if (e.KeyCode == Keys.C)
             {
-                
+                EditCountdown();
             }
         }
 
-        private void btnPlayPause_Click(object sender, EventArgs e)
+        private void BtnPlayPause_Click(object sender, EventArgs e)
         {
             PlayPause();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
+        private void BtnStop_Click(object sender, EventArgs e)
         {
             StopTimer();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
-            StopTimer();
+            EditCountdown();
+        }
+
+        private void BtnReset_MouseHover(object sender, EventArgs e)
+        {
+            cmpToolTip.SetToolTip(btnReset, $"Set new countdown (current: {Countdown})");
         }
 
         #endregion

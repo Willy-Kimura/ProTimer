@@ -64,6 +64,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="Transitions">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2019\Projects\Willy\Desktop\AwesomeDialogs\AwesomeDialogs\bin\Debug\Transitions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CountdownTimer.cs" />

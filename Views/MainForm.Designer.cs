@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cmpFormDock = new Bunifu.UI.WinForms.BunifuFormDock();
             this.lblCountdown = new Bunifu.UI.WinForms.BunifuLabel();
@@ -42,10 +42,11 @@
             this.btnReset = new Bunifu.UI.WinForms.BunifuUserControl();
             this.btnStop = new Bunifu.UI.WinForms.BunifuUserControl();
             this.btnPlayPause = new Bunifu.UI.WinForms.BunifuUserControl();
-            this.cmpFontsInstaller = new WK.Libraries.FontsInstallerNS.FontsInstaller(this.components);
             this.btnInfo = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.lblCountdownSet = new Bunifu.UI.WinForms.BunifuLabel();
+            this.cmpFontsInstaller = new WK.Libraries.FontsInstallerNS.FontsInstaller(this.components);
             this.SuspendLayout();
             // 
             // cmpFormDock
@@ -197,7 +198,7 @@
             this.btnClose.WaitOnLoad = false;
             this.btnClose.Zoom = 20;
             this.btnClose.ZoomSpeed = 10;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnReset
             // 
@@ -224,7 +225,8 @@
             this.cmpToolTip.SetToolTip(this.btnReset, "Set new countdown");
             this.cmpToolTip.SetToolTipIcon(this.btnReset, null);
             this.cmpToolTip.SetToolTipTitle(this.btnReset, "");
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            this.btnReset.MouseHover += new System.EventHandler(this.BtnReset_MouseHover);
             // 
             // btnStop
             // 
@@ -251,7 +253,7 @@
             this.cmpToolTip.SetToolTip(this.btnStop, "Stop/reset countdown");
             this.cmpToolTip.SetToolTipIcon(this.btnStop, null);
             this.cmpToolTip.SetToolTipTitle(this.btnStop, "");
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
             // btnPlayPause
             // 
@@ -278,27 +280,7 @@
             this.cmpToolTip.SetToolTip(this.btnPlayPause, "Play/pause countdown");
             this.cmpToolTip.SetToolTipIcon(this.btnPlayPause, null);
             this.cmpToolTip.SetToolTipTitle(this.btnPlayPause, "");
-            this.btnPlayPause.Click += new System.EventHandler(this.btnPlayPause_Click);
-            // 
-            // cmpFontsInstaller
-            // 
-            this.cmpFontsInstaller.AutoInstall = true;
-            this.cmpFontsInstaller.AutoRestart = true;
-            this.cmpFontsInstaller.ContainerControl = this;
-            this.cmpFontsInstaller.CustomInstallerDialog = null;
-            this.cmpFontsInstaller.DialogOptions.CollapsedContent = "{Fonts}";
-            this.cmpFontsInstaller.DialogOptions.Content = "In order for \'{AppName}\' to look neat and work effectively, {FontsRequiredExpress" +
-    "ion} to be installed in your system before proceeding. To view {FontsExpression}" +
-    ", click \"See details\".";
-            this.cmpFontsInstaller.DialogOptions.CustomIcon = null;
-            this.cmpFontsInstaller.DialogOptions.ShowAppIcon = true;
-            this.cmpFontsInstaller.DialogOptions.ShowCancelButton = false;
-            this.cmpFontsInstaller.DialogOptions.Title = "Fonts installation required";
-            this.cmpFontsInstaller.DialogOptions.UseElevationIcon = false;
-            this.cmpFontsInstaller.DialogOptions.WindowTitle = "{AppName}";
-            this.cmpFontsInstaller.FontsListBullet = "         +";
-            this.cmpFontsInstaller.ParentForm = this;
-            this.cmpFontsInstaller.TestingMode = false;
+            this.btnPlayPause.Click += new System.EventHandler(this.BtnPlayPause_Click);
             // 
             // btnInfo
             // 
@@ -347,11 +329,11 @@
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges1;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.Empty;
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -372,24 +354,24 @@
             this.bunifuButton1.IndicateFocus = false;
             this.bunifuButton1.Location = new System.Drawing.Point(126, 371);
             this.bunifuButton1.Name = "bunifuButton1";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
-            stateProperties3.BorderRadius = 2;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.bunifuButton1.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(92)))), ((int)(((byte)(101)))));
-            stateProperties4.BorderRadius = 2;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(92)))), ((int)(((byte)(101)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.bunifuButton1.OnPressedState = stateProperties4;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
+            stateProperties1.BorderRadius = 2;
+            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
+            stateProperties1.ForeColor = System.Drawing.Color.White;
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.bunifuButton1.onHoverState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(92)))), ((int)(((byte)(101)))));
+            stateProperties2.BorderRadius = 2;
+            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties2.BorderThickness = 1;
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(92)))), ((int)(((byte)(101)))));
+            stateProperties2.ForeColor = System.Drawing.Color.White;
+            stateProperties2.IconLeftImage = null;
+            stateProperties2.IconRightImage = null;
+            this.bunifuButton1.OnPressedState = stateProperties2;
             this.bunifuButton1.Size = new System.Drawing.Size(47, 21);
             this.bunifuButton1.TabIndex = 8;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -432,12 +414,53 @@
             this.bunifuImageButton1.Zoom = 17;
             this.bunifuImageButton1.ZoomSpeed = 10;
             // 
+            // lblCountdownSet
+            // 
+            this.lblCountdownSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblCountdownSet.AutoEllipsis = false;
+            this.lblCountdownSet.CursorType = null;
+            this.lblCountdownSet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
+            this.lblCountdownSet.ForeColor = System.Drawing.Color.White;
+            this.lblCountdownSet.Location = new System.Drawing.Point(322, 53);
+            this.lblCountdownSet.Name = "lblCountdownSet";
+            this.lblCountdownSet.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCountdownSet.Size = new System.Drawing.Size(73, 22);
+            this.lblCountdownSet.TabIndex = 10;
+            this.lblCountdownSet.Text = "30<span style=\"color: silver;\">:00</span><span style=\"color: darkgray;\">:00</span" +
+    ">";
+            this.lblCountdownSet.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblCountdownSet.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.cmpToolTip.SetToolTip(this.lblCountdownSet, "");
+            this.cmpToolTip.SetToolTipIcon(this.lblCountdownSet, null);
+            this.cmpToolTip.SetToolTipTitle(this.lblCountdownSet, "");
+            // 
+            // cmpFontsInstaller
+            // 
+            this.cmpFontsInstaller.AutoInstall = true;
+            this.cmpFontsInstaller.AutoRestart = true;
+            this.cmpFontsInstaller.ContainerControl = this;
+            this.cmpFontsInstaller.CustomInstallerDialog = null;
+            this.cmpFontsInstaller.DialogOptions.CollapsedContent = "{Fonts}";
+            this.cmpFontsInstaller.DialogOptions.Content = "In order for \'{AppName}\' to look neat and work effectively, {FontsRequiredExpress" +
+    "ion} to be installed in your system before proceeding. To view {FontsExpression}" +
+    ", click \"See details\".";
+            this.cmpFontsInstaller.DialogOptions.CustomIcon = null;
+            this.cmpFontsInstaller.DialogOptions.ShowAppIcon = true;
+            this.cmpFontsInstaller.DialogOptions.ShowCancelButton = false;
+            this.cmpFontsInstaller.DialogOptions.Title = "Fonts installation required";
+            this.cmpFontsInstaller.DialogOptions.UseElevationIcon = false;
+            this.cmpFontsInstaller.DialogOptions.WindowTitle = "{AppName}";
+            this.cmpFontsInstaller.FontsListBullet = "         +";
+            this.cmpFontsInstaller.ParentForm = this;
+            this.cmpFontsInstaller.TestingMode = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(125)))), ((int)(((byte)(151)))));
             this.ClientSize = new System.Drawing.Size(717, 417);
+            this.Controls.Add(this.lblCountdownSet);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.btnInfo);
@@ -475,5 +498,6 @@
         private Bunifu.UI.WinForms.BunifuImageButton btnInfo;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
+        private Bunifu.UI.WinForms.BunifuLabel lblCountdownSet;
     }
 }
