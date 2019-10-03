@@ -114,7 +114,7 @@
             this.lblAppName.CursorType = null;
             this.lblAppName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppName.ForeColor = System.Drawing.Color.White;
-            this.lblAppName.Location = new System.Drawing.Point(32, 371);
+            this.lblAppName.Location = new System.Drawing.Point(31, 374);
             this.lblAppName.Name = "lblAppName";
             this.lblAppName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblAppName.Size = new System.Drawing.Size(90, 20);
@@ -170,6 +170,7 @@
             // 
             this.btnClose.ActiveImage = null;
             this.btnClose.AllowAnimations = true;
+            this.btnClose.AllowBuffering = false;
             this.btnClose.AllowZooming = false;
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnClose.ErrorImage")));
@@ -286,6 +287,7 @@
             // 
             this.btnInfo.ActiveImage = null;
             this.btnInfo.AllowAnimations = true;
+            this.btnInfo.AllowBuffering = false;
             this.btnInfo.AllowZooming = false;
             this.btnInfo.BackColor = System.Drawing.Color.Transparent;
             this.btnInfo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ErrorImage")));
@@ -352,7 +354,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(126, 371);
+            this.bunifuButton1.Location = new System.Drawing.Point(125, 374);
             this.bunifuButton1.Name = "bunifuButton1";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
             stateProperties1.BorderRadius = 2;
@@ -385,6 +387,7 @@
             // 
             this.bunifuImageButton1.ActiveImage = null;
             this.bunifuImageButton1.AllowAnimations = true;
+            this.bunifuImageButton1.AllowBuffering = false;
             this.bunifuImageButton1.AllowZooming = false;
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));

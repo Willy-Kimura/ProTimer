@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using ProTimer.Helpers;
+using WK.Libraries.FontsInstallerNS;
 
 namespace ProTimer.Views
 {
@@ -20,6 +21,7 @@ namespace ProTimer.Views
         #region Fields
 
         private bool _alignedText;
+        private CountDownTimer _timer = new CountDownTimer();
 
         #endregion
 
@@ -27,8 +29,6 @@ namespace ProTimer.Views
 
         public bool IsPlaying { get; set; }
         public string Countdown { get; set; }
-
-        public CountDownTimer timer = new CountDownTimer();
 
         #endregion
 
@@ -46,9 +46,9 @@ namespace ProTimer.Views
             SetTime(30, 0);
 
             // Update label text.
-            timer.TimeChanged += delegate
+            _timer.TimeChanged += delegate
             {
-                lblCountdown.Text = timer.TimeLeftMsStr;
+                lblCountdown.Text = _timer.TimeLeftMsStr;
 
                 if (!_alignedText)
                 {
@@ -58,20 +58,20 @@ namespace ProTimer.Views
             };
 
             // Show messageBox on timer = 00:00.000.
-            timer.CountDownFinished += delegate
+            _timer.CountDownFinished += delegate
             {
                 PauseTimer();
             };
 
             // Timer step. By default is 1 second.
-            timer.StepMs = 100; // 33;
+            _timer.StepMs = 100; // 33;
 
             InitializeTimerButtons();
         }
 
         private void SetTime(int min = 30, int sec = 00)
         {
-            timer.SetTime(min, sec);
+            _timer.SetTime(min, sec);
 
             Countdown = $"{min}:{sec}";
 
@@ -84,7 +84,7 @@ namespace ProTimer.Views
 
         public void PlayTimer()
         {
-            timer.Start();
+            _timer.Start();
             IsPlaying = true;
 
             btnPlayPause.ImageMargin = new Padding(0, 0, 0, 0);
@@ -94,7 +94,7 @@ namespace ProTimer.Views
 
         public void StopTimer()
         {
-            timer.Stop();
+            _timer.Stop();
             IsPlaying = false;
 
             btnPlayPause.ImageMargin = new Padding(3, 0, 0, 0);
@@ -108,7 +108,7 @@ namespace ProTimer.Views
 
         public void PauseTimer()
         {
-            timer.Pause();
+            _timer.Pause();
             IsPlaying = false;
 
             btnPlayPause.ImageMargin = new Padding(3, 0, 0, 0);
@@ -125,12 +125,7 @@ namespace ProTimer.Views
             else
                 PauseTimer();
         }
-
-        private void EditCountdown()
-        {
-
-        }
-
+        
         #endregion
 
         #region Events
@@ -138,6 +133,14 @@ namespace ProTimer.Views
         private void MainForm_Load(object sender, EventArgs e)
         {
             PrepareTimer();
+
+            // Subscribes any additional controls to enable
+            // them drag the Form at runtime.
+            cmpFormDock.SubscribeControlsToDragEvents(new[] { lblCountdownSet });
+
+            // Install the required 'Product Sans' font if missing.
+            var fontsInstaller = new FontsInstaller();
+            fontsInstaller.InstallFont($@"{Application.StartupPath}\Resources\Product Sans\Product Sans Regular.ttf");
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -151,11 +154,6 @@ namespace ProTimer.Views
             if (e.KeyCode == Keys.X)
             {
                 StopTimer();
-            }
-
-            if (e.KeyCode == Keys.C)
-            {
-                EditCountdown();
             }
         }
 
@@ -176,7 +174,7 @@ namespace ProTimer.Views
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            EditCountdown();
+            
         }
 
         private void BtnReset_MouseHover(object sender, EventArgs e)
