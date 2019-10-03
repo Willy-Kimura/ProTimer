@@ -3,7 +3,7 @@
 
 ![protimer-demo](/Assets/protimer-demo.gif)
 
-**ProTimer** is a .NET Windows Countdown application template that helps you easily kick-start developing your own Windows Countdown timer hassle-free. It comes bundled with the standard countdown features. You can extend it even further with more customization options and features such as theming and even your own *About* window.
+**ProTimer** is a .NET Windows Countdown application template that comes bundled with the standard countdown features. You can extend it even further with more customization options and features such as theming and even your own *About* window.
 
 # Features
 
