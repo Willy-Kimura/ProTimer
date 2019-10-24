@@ -138,7 +138,7 @@ namespace ProTimer.Views
 
             // Subscribes any additional controls to enable
             // them drag the Form at runtime.
-            cmpFormDock.SubscribeControlsToDragEvents(new[] { lblCountdownSet });
+            bunifuFormDock.SubscribeControlsToDragEvents(new[] { lblCountdownSet });
 
             // Install the required 'Product Sans' font if missing.
             var fontsInstaller = new FontsInstaller();
@@ -181,7 +181,7 @@ namespace ProTimer.Views
 
         private void BtnReset_MouseHover(object sender, EventArgs e)
         {
-            cmpToolTip.SetToolTip(btnReset, $"Set new countdown (current: {Countdown})");
+            bunifuToolTip.SetToolTip(btnReset, $"Set new countdown (current: {Countdown})");
         }
 
         #endregion
