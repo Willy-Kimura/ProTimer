@@ -1,0 +1,9 @@
+{
+  "LogFilePath": "Log.json",
+  "AppSettingsPath": "Settings.json",
+  "ResourcesDirectory": "C:\\Users\\Willy\\source\\repos\\demos\\ProTimer\\bin\\Debug\\Resources",
+  "TimerStep": 0,
+  "LogCountdowns": false,
+  "LastCountdown": null,
+  "Log": []
+}
