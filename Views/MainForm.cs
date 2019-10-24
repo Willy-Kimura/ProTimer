@@ -27,7 +27,6 @@ namespace ProTimer.Views
 
         public bool IsPlaying { get; set; }
         public string Countdown { get; set; }
-
         public CountDownTimer timer = new CountDownTimer();
 
         #endregion
@@ -43,7 +42,7 @@ namespace ProTimer.Views
         private void PrepareTimer()
         {
             // Set to 30 mins.
-            SetTime(30, 0);
+            SetCountdown(30, 0);
 
             // Update label text.
             timer.TimeChanged += delegate
@@ -69,7 +68,7 @@ namespace ProTimer.Views
             InitializeTimerButtons();
         }
 
-        private void SetTime(int min = 30, int sec = 00)
+        private void SetCountdown(int min = 30, int sec = 00)
         {
             timer.SetTime(min, sec);
 

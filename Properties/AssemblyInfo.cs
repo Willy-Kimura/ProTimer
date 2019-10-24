@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ProTimer - Countdown timer for .NET")]
-[assembly: AssemblyDescription("Countdown timer for .NET")]
+[assembly: AssemblyTitle("ProTimer - Minimalist countdown timer for .NET")]
+[assembly: AssemblyDescription("Minimalist countdown timer for .NET")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("---")]
 [assembly: AssemblyProduct("ProTimer")]

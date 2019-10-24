@@ -57,13 +57,18 @@
     <Reference Include="FontsInstaller, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FontsInstaller.1.3.0\lib\FontsInstaller.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
     <Reference Include="Transitions">
       <HintPath>..\..\..\..\Documents\Visual Studio 2019\Projects\Willy\Desktop\AwesomeDialogs\AwesomeDialogs\bin\Debug\Transitions.dll</HintPath>
     </Reference>
@@ -72,6 +77,13 @@
     <Compile Include="Helpers\CountdownTimer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ApplicationSettings.cs" />
+    <Compile Include="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +100,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Configurations\packages.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +123,10 @@
     <None Include="Configurations\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\timer_52px.png" />
+    <None Include="Resources\settings_60px.png" />
+    <None Include="Resources\info_white_52px.png" />
+    <None Include="Resources\close_sign_52px.png" />
     <Content Include="Resources\protimer.ico" />
     <None Include="Resources\Stop_104px_2.png" />
     <None Include="Resources\Play_104px_4.png" />

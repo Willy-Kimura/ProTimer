@@ -118,13 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Stop_104px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stop_104px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_white_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_white_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pause_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pause_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_sign_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_sign_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Play_104px_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Play_104px_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Stop_104px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stop_104px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="timer_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\timer_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

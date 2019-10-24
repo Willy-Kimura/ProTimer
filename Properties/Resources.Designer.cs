@@ -63,6 +63,26 @@ namespace ProTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_sign_52px {
+            get {
+                object obj = ResourceManager.GetObject("close_sign_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_white_52px {
+            get {
+                object obj = ResourceManager.GetObject("info_white_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pause_104px {
             get {
                 object obj = ResourceManager.GetObject("Pause_104px", resourceCulture);
@@ -83,9 +103,29 @@ namespace ProTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap settings_60px {
+            get {
+                object obj = ResourceManager.GetObject("settings_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Stop_104px_2 {
             get {
                 object obj = ResourceManager.GetObject("Stop_104px_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap timer_52px {
+            get {
+                object obj = ResourceManager.GetObject("timer_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

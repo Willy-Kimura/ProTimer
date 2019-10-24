@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * ProTimer - Minimalist countdown timer for .NET.
+ * Don't forget to change the assembly information.
+ * 
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace ProTimer
