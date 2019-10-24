@@ -255,7 +255,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(126, 375);
+            this.bunifuButton1.Location = new System.Drawing.Point(125, 375);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
             this.bunifuButton1.onHoverState.BorderRadius = 2;
