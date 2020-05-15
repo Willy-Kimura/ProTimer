@@ -34,7 +34,7 @@ To build the project, you'll need:
 
 - [Visual Studio 2012](https://visualstudio.microsoft.com/downloads/) or higher.
 
-- A [Bunifu UI](https://bunifuframework.com/ref/Willy) license. (Use the discount code [WK20]( https://bunifuframework.com/pricing ))
+- A [Bunifu UI](https://kutt.it/willy) license.
 - Install [Product Sans](https://befonts.com/product-sans-font.html) font.
 
 The project supports [.NET Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17718) and higher.
